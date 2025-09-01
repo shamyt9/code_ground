@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Ground</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Code Ground</h1>
+            <p class="tagline">Comprehensive code examples with dynamic syntax highlighting</p>
+        </header>
+
+        <button class="mobile-filter-btn" id="mobile-filter-toggle">
+            <i class="fas fa-filter"></i> Show Filters
+        </button>
+
+        <div class="controls" id="filter-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search code snippets...">
+            </div>
+            
+            <div class="filter">
+                <div class="select-wrapper">
+                    <select id="chapter-filter">
+                        <option value="all">All Chapters</option>
+                        <option value="arrays">Arrays</option>
+                        <option value="linked-lists">Linked Lists</option>
+                        <option value="stacks">Stacks & Queues</option>
+                        <option value="trees">Trees</option>
+                        <option value="graphs">Graphs</option>
+                        <option value="sorting">Sorting Algorithms</option>
+                        <option value="searching">Searching Algorithms</option>
+                        <option value="dp">Dynamic Programming</option>
+                    </select>
+                </div>
+                
+                <div class="select-wrapper">
+                    <select id="language-filter">
+                        <option value="all">All Languages</option>
+                        <option value="cpp">C++</option>
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                    </select>
+                </div>
+                
+                <input type="date" id="date-picker" placeholder="Select date">
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Code Card 1 - C++ -->
+            <div class="code-card" data-chapter="arrays" data-language="cpp" data-date="2023-10-15">
+                <div class="card-header">
+                    <h3>Array Rotation</h3>
+                    <div>
+                        <span class="language">C++</span>
+                        <span class="date">Oct 15, 2023</span>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <pre><code>// Function to rotate an array to the left by d positions
+#include <iostream>
+using namespace std;
+
+void rotateArray(int arr[], int n, int d) {
+    // Create a temporary array to store rotated version
+    int temp[n];
+    
+    // Rotate the array
+    for (int i = 0; i < n; i++) {
+        temp[i] = arr[(i + d) % n];
+    }
+    
+    // Copy temp back to original array
+    for (int i = 0; i < n; i++) {
+        arr[i] = temp[i];
+    }
+}
+
+// Utility function to print an array
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int d = 2;
+    
+    cout << "Original array: ";
+    printArray(arr, n);
+    
+    rotateArray(arr, n, d);
+    
+    cout << "Rotated array: ";
+    printArray(arr, n);
+    
+    return 0;
+}</code></pre>
+                </div>
+                <div class="output-container">
+                    <h4>Output:</h4>
+                    <div class="output">Original array: 1 2 3 4 5 6 7 
+Rotated array: 3 4 5 6 7 1 2</div>
+                </div>
+                <div class="card-actions">
+                    <button class="copy-btn"><i class="fas fa-copy"></i> Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Code Card 2 - Python -->
+            <div class="code-card" data-chapter="sorting" data-language="python" data-date="2023-10-10">
+                <div class="card-header">
+                    <h3>Quick Sort Algorithm</h3>
+                    <div>
+                        <span class="language">Python</span>
+                        <span class="date">Oct 10, 2023</span>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <pre><code>def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    
+    return quicksort(left) + middle + quicksort(right)
+
+def main():
+    # Example array
+    arr = [64, 34, 25, 12, 22, 11, 90]
+    print("Original array:", arr)
+    
+    sorted_arr = quicksort(arr)
+    print("Sorted array:  ", sorted_arr)
+
+if __name__ == "__main__":
+    main()</code></pre>
+                </div>
+                <div class="output-container">
+                    <h4>Output:</h4>
+                    <div class="output">Original array: [64, 34, 25, 12, 22, 11, 90]
+Sorted array:   [11, 12, 22, 25, 34, 64, 90]</div>
+                </div>
+                <div class="card-actions">
+                    <button class="copy-btn"><i class="fas fa-copy"></i> Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Code Card 3 - JavaScript -->
+            <div class="code-card" data-chapter="linked-lists" data-language="javascript" data-date="2023-10-05">
+                <div class="card-header">
+                    <h3>Linked List Implementation</h3>
+                    <div>
+                        <span class="language">JavaScript</span>
+                        <span class="date">Oct 5, 2023</span>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <pre><code>class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor() {
+        this.head = null;
+    }
+    
+    // Add a new node at the end
+    append(data) {
+        const newNode = new Node(data);
+        
+        if (this.head === null) {
+            this.head = newNode;
+            return;
+        }
+        
+        let last = this.head;
+        while (last.next !== null) {
+            last = last.next;
+        }
+        
+        last.next = newNode;
+    }
+    
+    // Print the linked list
+    printList() {
+        let currentNode = this.head;
+        let result = "";
+        while (currentNode !== null) {
+            result += currentNode.data + " -> ";
+            currentNode = currentNode.next;
+        }
+        result += "null";
+        console.log(result);
+    }
+}
+
+// Example usage
+const list = new LinkedList();
+list.append(1);
+list.append(2);
+list.append(3);
+list.append(4);
+list.printList();</code></pre>
+                </div>
+                <div class="output-container">
+                    <h4>Output:</h4>
+                    <div class="output">1 -> 2 -> 3 -> 4 -> null</div>
+                </div>
+                <div class="card-actions">
+                    <button class="copy-btn"><i class="fas fa-copy"></i> Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Code Card 4 - C++ -->
+            <div class="code-card" data-chapter="trees" data-language="cpp" data-date="2023-09-28">
+                <div class="card-header">
+                    <h3>Binary Tree Traversal</h3>
+                    <div>
+                        <span class="language">C++</span>
+                        <span class="date">Sep 28, 2023</span>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <pre><code>#include <iostream>
+using namespace std;
+
+struct TreeNode {
+    int data;
+    TreeNode* left;
+    TreeNode* right;
+    
+    TreeNode(int val) : data(val), left(nullptr), right(nullptr) {}
+};
+
+// Inorder traversal: Left, Root, Right
+void inorderTraversal(TreeNode* root) {
+    if (root == nullptr) return;
+    
+    inorderTraversal(root->left);
+    cout << root->data << " ";
+    inorderTraversal(root->right);
+}
+
+// Preorder traversal: Root, Left, Right
+void preorderTraversal(TreeNode* root) {
+    if (root == nullptr) return;
+    
+    cout << root->data << " ";
+    preorderTraversal(root->left);
+    preorderTraversal(root->right);
+}
+
+// Postorder traversal: Left, Right, Root
+void postorderTraversal(TreeNode* root) {
+    if (root == nullptr) return;
+    
+    postorderTraversal(root->left);
+    postorderTraversal(root->right);
+    cout << root->data << " ";
+}
+
+int main() {
+    // Create a sample binary tree
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+    
+    cout << "Inorder traversal: ";
+    inorderTraversal(root);
+    cout << endl;
+    
+    cout << "Preorder traversal: ";
+    preorderTraversal(root);
+    cout << endl;
+    
+    cout << "Postorder traversal: ";
+    postorderTraversal(root);
+    cout << endl;
+    
+    return 0;
+}</code></pre>
+                </div>
+                <div class="output-container">
+                    <h4>Output:</h4>
+                    <div class="output">Inorder traversal: 4 2 5 1 3 
+Preorder traversal: 1 2 4 5 3 
+Postorder traversal: 4 5 2 3 1</div>
+                </div>
+                <div class="card-actions">
+                    <button class="copy-btn"><i class="fas fa-copy"></i> Copy Code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
