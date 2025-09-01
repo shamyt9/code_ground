@@ -1,0 +1,25 @@
+{
+    "name": "code_ground",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "deploy": "gh-pages -d dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shamyt9/code_ground.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/shamyt9/code_ground/issues"
+    },
+    "homepage": "https://github.com/shamyt9/code_ground#readme",
+    "devDependencies": {
+        "gh-pages": "^6.3.0"
+    }
+}
